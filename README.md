@@ -1,14 +1,5 @@
-<<<<<<< Updated upstream
-# Open-Farming-Sim
+# Car Game
 
 
-![unknown (5)](https://user-images.githubusercontent.com/87624652/182387551-f6ad37ef-a14e-4d17-8677-189d1703e2b4.png)
+https://user-images.githubusercontent.com/87624652/200559976-5277882d-8573-455c-b0a0-9ab38ee4d3b7.mp4
 
-
-
-https://user-images.githubusercontent.com/87624652/182387225-268142a8-bb24-4e95-b15e-5eb6dce9d63c.mp4
-
-=======
-# Open Farm Simulator
->>>>>>> Stashed changes
-# Car game
