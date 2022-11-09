@@ -80,9 +80,23 @@ void render_frame()
 
 void	PenDrawLine(int x, int y)
 {
-	if (PENID == 1)
-		TRACK.walls.push_back(vec(x, y));
-	cout << x << " , " << y << endl;
+	static bool clicked;
+	static linevec lv;
+
+	if (!clicked)
+	{
+		lv.ax = x;
+		lv.ay = y;
+		clicked = true;
+	}
+	else
+	{
+		lv.bx = x;
+		lv.by = y;
+		if (PENID == 1)
+			TRACK.walls.push_back(lv);
+		clicked = false;
+	}
 }
 
 bool	doKeyboard(double Tdelta)
@@ -93,9 +107,11 @@ bool	doKeyboard(double Tdelta)
 
 	state = SDL_GetKeyboardState(NULL);
 	if (state[SDL_SCANCODE_W] && player.car.m_speed < player.car.m_maxSpeed)
-		player.car.m_speed += Tdelta;
+		player.car.m_speed += Tdelta / 5;
+	else if (state[SDL_SCANCODE_S] && player.car.m_speed > 0)
+		player.car.m_speed -= Tdelta / 5;
 	else if (player.car.m_speed > 0)
-		player.car.m_speed -= Tdelta;
+		player.car.m_speed -= Tdelta / 20;
 	else if (player.car.m_speed < 0)
 		player.car.m_speed = 0;
 
@@ -256,6 +272,7 @@ int main(int argc, char* args[]) {
 			frame++;
 		
 		//TerrainThread.join(); TerrainThread.~thread(); // waits for map.RenderChunks(); to be done
+
 
 		TRACK.Draw();
 		player.car.draw();

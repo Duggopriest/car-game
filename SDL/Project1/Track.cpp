@@ -13,28 +13,28 @@ void	Track::Draw()
 
 	// ====================== walls
 	len = walls.size();
-	if (walls.size() > 1)
+	if (walls.size() > 0)
 	{
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
-		for (int i = 0; i + 2 <= len; i += 2)
-			SDL_RenderDrawLine(renderer, walls[i].x, walls[i].y, walls[i + 1].x, walls[i + 1].y);
+		for (int i = 0; i < len; i++)
+			SDL_RenderDrawLine(renderer, walls[i].ax, walls[i].ay, walls[i].bx, walls[i].by);
 	}
 
 	// ====================== CheckPoints
 	len = checkpoint.size();
-	if (checkpoint.size() > 1)
+	if (checkpoint.size() > 0)
 	{
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
-		for (int i = 0; i + 2 <= len; i += 2)
-			SDL_RenderDrawLine(renderer, checkpoint[i].x, checkpoint[i].y, checkpoint[i + 1].x, checkpoint[i + 1].y);
+		for (int i = 0; i < len; i++)
+			SDL_RenderDrawLine(renderer, checkpoint[i].ax, checkpoint[i].ay, checkpoint[i].bx, checkpoint[i].by);
 	}
 
 	// ====================== Finish
 	len = finish.size();
-	if (finish.size() > 1)
+	if (finish.size() > 0)
 	{
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
-		for (int i = 0; i + 2 <= len; i += 2)
-			SDL_RenderDrawLine(renderer, finish[i].x, finish[i].y, finish[i + 1].x, finish[i + 1].y);
+		for (int i = 0; i < len; i++)
+			SDL_RenderDrawLine(renderer, finish[i].ax, finish[i].ay, finish[i].bx, finish[i].by);
 	}
 }

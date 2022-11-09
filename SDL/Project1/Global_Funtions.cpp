@@ -9,6 +9,7 @@ TTF_Font* FONT;
 const int WINDOW_WIDTH = 1920, WINDOW_HEIGHT = 1000;
 
 SDL_Texture *CAR_TEXTURE;
+SDL_Texture* WallPaper;
 
 SDL_Event event;
 SDL_Renderer* renderer;
@@ -29,7 +30,7 @@ void	SaveGame()
 	TextFile << "s " << TRACK.startLine.x << " , " << TRACK.startLine.y << endl;
 	TextFile << "d " << TRACK.startdir << endl;
 	for (int i = 0; i < TRACK.walls.size(); i++)
-		TextFile << "w " << TRACK.walls[i].x << " , " << TRACK.walls[i].y << endl;
+		TextFile << "w " << TRACK.walls[i].ax << " , " << TRACK.walls[i].ay << " , " << TRACK.walls[i].bx << " , " << TRACK.walls[i].by << endl;
 	/*
 	for (int i = 0; i < TRACK.walls.size(); i++)
 		TextFile << "c " << TRACK.checkpoint[i].x << " , " << TRACK.checkpoint[i].y << endl;
@@ -46,28 +47,39 @@ void	LoadGame()
 	TextFile.open("Saves/SaveFile.txt");
 
 	std::string line;
-	int	x, y, i;
+	int	ax, ay, bx, by, i;
 
 	while (std::getline(TextFile, line))
 	{
+		cout << "readding line = " << line << endl;
 		i = 1;
-		x = atoi(&line.at(i));
+		ax = atoi(&line.at(i));
 		if (line.at(0) == 'd')
 		{
-			TRACK.startdir = x;
+			TRACK.startdir = ax;
+			cout << "loaded startlineDIR" << endl;
 			continue;
 		}
 		while (line.at(i++) != ',');
-		y = atoi(&line.at(i));
-
+		ay = atoi(&line.at(i));
 		if (line.at(0) == 's')
-			TRACK.startLine = vec(x, y);
-		else if (line.at(0) == 'w')
-			TRACK.walls.push_back(vec(x, y));
-		else if (line.at(0) == 'c')
-			TRACK.checkpoint.push_back(vec(x, y));
+		{
+			TRACK.startLine = vec(ax, ay);
+			cout << "loaded startline" << endl;
+			continue;
+		}
+		while (line.at(i++) != ',');
+		bx = atoi(&line.at(i));
+		while (line.at(i++) != ',');
+		by = atoi(&line.at(i));
+
+		if (line.at(0) == 'w')
+			TRACK.walls.push_back(linevec(ax, ay, bx, by));
+		cout << "loaded wall" << endl;
+		if (line.at(0) == 'c')
+			TRACK.checkpoint.push_back(linevec(ax, ay, bx, by));
 		else if (line.at(0) == 'f')
-			TRACK.finish.push_back(vec(x, y));
+			TRACK.finish.push_back(linevec(ax, ay, bx, by));
 	}
 	player.car.reset();
 	cout << "done\n";
@@ -140,6 +152,8 @@ void	BuildGlobals()
 	if (!FONT)
 		std::cout << "Couldn't find/init open ttf font." << std::endl;
 	CAR_TEXTURE = Load_Texture("textures/car.bmp");
+
+	WallPaper = Load_Texture("textures/wallpaper.bmp");
 
 
 	cout << "Building UI\n";

@@ -8,6 +8,14 @@ typedef struct vec
 	int	y;
 };
 
+typedef struct linevec
+{
+	int	ax;
+	int	ay;
+	int	bx;
+	int	by;
+};
+
 class Track
 {
 	public:
@@ -16,8 +24,8 @@ class Track
 
 		vec startLine;
 		double	startdir;
-		std::vector<vec> walls;
-		std::vector<vec> checkpoint;
-		std::vector<vec> finish;
+		std::vector<linevec> walls;
+		std::vector<linevec> checkpoint;
+		std::vector<linevec> finish;
 };
 

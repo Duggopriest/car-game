@@ -22,6 +22,7 @@
 
 using std::cout;
 using std::endl;
+using std::fmod;
 
 extern int	Program_Running;
 

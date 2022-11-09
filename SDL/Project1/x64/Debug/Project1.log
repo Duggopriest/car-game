@@ -1,1 +1,27 @@
-﻿  Project1.vcxproj -> C:\Users\jgobb\Desktop\car game\SDL\x64\Debug\Project1.exe
+﻿  Main.cpp
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(9,2): warning C4091: 'typedef ': ignored on left of 'vec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(17,2): warning C4091: 'typedef ': ignored on left of 'linevec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\src\Main.cpp(105,8): warning C4804: '>': unsafe use of type 'bool' in operation
+C:\Users\jgobb\Desktop\car game\src\Main.cpp(199,24): warning C4101: 'mouseEvent': unreferenced local variable
+C:\Users\jgobb\Desktop\car game\src\Main.cpp(236,15): warning C4101: 'state': unreferenced local variable
+  Car.cpp
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(9,2): warning C4091: 'typedef ': ignored on left of 'vec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(17,2): warning C4091: 'typedef ': ignored on left of 'linevec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Car.cpp(126,89): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Car.cpp(126,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Car.cpp(126,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Car.cpp(126,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Global_Funtions.cpp
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(9,2): warning C4091: 'typedef ': ignored on left of 'vec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(17,2): warning C4091: 'typedef ': ignored on left of 'linevec' when no variable is declared
+  Track.cpp
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(9,2): warning C4091: 'typedef ': ignored on left of 'vec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(17,2): warning C4091: 'typedef ': ignored on left of 'linevec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.cpp(15,20): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.cpp(24,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.cpp(33,21): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  UI.cpp
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(9,2): warning C4091: 'typedef ': ignored on left of 'vec' when no variable is declared
+C:\Users\jgobb\Desktop\car game\SDL\Project1\Track.h(17,2): warning C4091: 'typedef ': ignored on left of 'linevec' when no variable is declared
+  Generating Code...
+  Project1.vcxproj -> C:\Users\jgobb\Desktop\car game\SDL\x64\Debug\Project1.exe

@@ -20,6 +20,8 @@ class Car
 		double	m_maxTurnSpeed;
 		double	m_steeringWheel;
 		double	m_steeringWheelSpeed;
+
+		double	m_velocityDir;
 };
 
 
